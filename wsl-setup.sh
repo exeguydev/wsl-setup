@@ -13,7 +13,7 @@
 #         NOTES: Feel free to modify and make it your own
 #        AUTHOR: ExeGuy
 #       CREATED: 2026-03-15
-#       VERSION: 1.0 Alpha
+#       VERSION: 2.1
 #
 #===============================================================================
 
@@ -29,13 +29,12 @@ BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 WHITE='\033[1;37m'
-NC='\033[0m'  # No Color
+NC='\033[0m'
 
 #-------------------------------------------------------------------------------
 # Helper Functions
 #-------------------------------------------------------------------------------
 
-# Print colored header
 print_header() {
     echo ""
     echo -e "${PURPLE}╔════════════════════════════════════════════════════════╗${NC}"
@@ -44,29 +43,24 @@ print_header() {
     echo ""
 }
 
-# Print step title
 print_step() {
     echo -e "${BLUE}┌─────────────────────────────────────────────────────${NC}"
     echo -e "${BLUE}│${NC} ${CYAN}►${NC} ${WHITE}$1${NC}"
     echo -e "${BLUE}└─────────────────────────────────────────────────────${NC}"
 }
 
-# Print success message
 print_success() {
     echo -e "${GREEN}✓${NC} $1"
 }
 
-# Print error message
 print_error() {
     echo -e "${RED}✗${NC} $1"
 }
 
-# Print warning message
 print_warning() {
     echo -e "${YELLOW}!${NC} $1"
 }
 
-# Simple spinner animation
 spinner() {
     local pid=$1
     local spinstr='|/-\'
@@ -83,8 +77,7 @@ spinner() {
 # Main Script
 #-------------------------------------------------------------------------------
 
-# Welcome message
-print_header "🚀 ExeGuy's WSL Setup Script v2.0"
+print_header "🚀 ExeGuy's WSL Setup Script v2.1"
 echo -e "${WHITE}Setting up your development environment...${NC}"
 echo ""
 
@@ -92,8 +85,8 @@ echo ""
 # Step 1: Update system
 #-------------------------------------------------------------------------------
 print_step "Step 1/5: Updating system packages"
-sudo apt update -qq & spinner $!
-sudo apt upgrade -y -qq & spinner $!
+sudo apt update -qq
+sudo apt upgrade -y -qq
 print_success "System updated"
 echo ""
 
@@ -103,7 +96,7 @@ echo ""
 print_step "Step 2/5: Installing base dependencies"
 sudo apt install --no-install-recommends -y -qq \
     ca-certificates curl wget git openssh-client gnupg \
-    build-essential software-properties-common & spinner $!
+    build-essential software-properties-common
 print_success "Base dependencies installed"
 echo ""
 
@@ -127,14 +120,14 @@ print_step "Step 4/5: Configuring Zsh + Powerlevel10k"
 
 # Set zsh as default shell
 if [ "$SHELL" != "$(which zsh)" ]; then
-    chsh -s $(which zsh)
+    chsh -s "$(which zsh)"
     print_warning "Restart your terminal or run: exec zsh"
 fi
 
 # Install Oh-My-Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo -e "${CYAN}Installing Oh-My-Zsh...${NC}"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended & spinner $!
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     print_success "Oh-My-Zsh installed"
 else
     print_success "Oh-My-Zsh already installed"
@@ -144,7 +137,7 @@ fi
 if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
     echo -e "${CYAN}Cloning Powerlevel10k...${NC}"
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
-        "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" & spinner $!
+        "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
     print_success "Powerlevel10k installed"
 else
     print_success "Powerlevel10k already installed"
@@ -174,9 +167,9 @@ fi
 if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]; then
     echo -e "${CYAN}Installing zsh plugins...${NC}"
     git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions \
-        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions & spinner $!
+        "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
     git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting \
-        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting & spinner $!
+        "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
     print_success "Plugins installed"
 else
     print_success "Plugins already installed"
