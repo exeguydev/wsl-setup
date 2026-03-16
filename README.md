@@ -5,7 +5,7 @@ If You Found A Bug, Please Report It!
 
 Automated setup script for WSL2 development environment with Zsh, Powerlevel10k, and essential dev tools.
 
-![Version](https://img.shields.io/badge/version-1.0-blue)
+![Version](https://img.shields.io/badge/version-2.1-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## ✨ Features
