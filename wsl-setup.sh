@@ -109,7 +109,7 @@ sudo apt install --no-install-recommends -y -qq \
     fzf ripgrep bat eza \
     tree htop ncdu jq \
     unzip zip p7zip-full \
-    man-db fastfetch
+    man-db fastfetch nmap
 print_success "Development tools installed"
 echo ""
 
