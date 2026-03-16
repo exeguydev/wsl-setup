@@ -8,6 +8,13 @@ Automated setup script for WSL2 development environment with Zsh, Powerlevel10k,
 ![Version](https://img.shields.io/badge/version-2.1-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+
+<img width="578" height="381" alt="Screenshot1" src="https://github.com/user-attachments/assets/a2848ba0-ad8a-40e6-89e6-8f740d98e258" />
+<img width="578" height="201" alt="Screenshot2" src="https://github.com/user-attachments/assets/5fbf10e6-a80a-448e-bb51-a2e9225c9d46" />
+<img width="610" height="192" alt="Screenshot3" src="https://github.com/user-attachments/assets/82ee19a0-a46b-4f13-ae27-ad235f86af36" />
+
+
+
 ## ✨ Features
 
 - 🎨 **Beautiful output** - Colored text, spinners, and progress indicators
