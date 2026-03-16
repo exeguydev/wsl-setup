@@ -1,8 +1,11 @@
 # 🚀 WSL Setup Script
 
+### THIS IS MY FIRST PERSONAL SCRIPT! USE IT AT YOUR OWN RISK!
+## If You Found A Bug, Please Report It.
+
 Automated setup script for WSL2 development environment with Zsh, Powerlevel10k, and essential dev tools.
 
-![Version](https://img.shields.io/badge/version-2.0-blue)
+![Version](https://img.shields.io/badge/version-1.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## ✨ Features
