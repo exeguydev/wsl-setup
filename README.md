@@ -1,7 +1,7 @@
 # 🚀 WSL Setup Script
 
 ### THIS IS MY FIRST PERSONAL SCRIPT! USE IT AT YOUR OWN RISK!
-## If You Found A Bug, Please Report It.
+If You Found A Bug, Please Report It!
 
 Automated setup script for WSL2 development environment with Zsh, Powerlevel10k, and essential dev tools.
 
