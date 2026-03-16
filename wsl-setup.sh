@@ -96,7 +96,7 @@ echo ""
 print_step "Step 2/5: Installing base dependencies"
 sudo apt install --no-install-recommends -y -qq \
     ca-certificates curl wget git openssh-client gnupg \
-    build-essential software-properties-common
+    build-essential
 print_success "Base dependencies installed"
 echo ""
 
