@@ -43,12 +43,12 @@ cd wsl-setup
 
 ### 2. Make the script executable
 ```
-chmod +x install-wsl.sh
+chmod +x wsl-setup.sh
 ```
 
 ### 3. Run the installer
 ```
-./install-wsl.sh
+./wsl-setup.sh
 ```
 
 ### 4. Restart your shell
