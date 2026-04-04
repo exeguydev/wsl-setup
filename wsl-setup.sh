@@ -38,7 +38,7 @@ NC='\033[0m'
 print_header() {
     echo ""
     echo -e "${PURPLE}╔════════════════════════════════════════════════════════╗${NC}"
-    echo -e "${PURPLE}║${NC} ${WHITE}$1${NC} ${PURPLE}║${NC}"
+    echo -e "${PURPLE}║${NC} ${WHITE}$1${NC} ${PURPLE}                         ║${NC}"
     echo -e "${PURPLE}╚════════════════════════════════════════════════════════╝${NC}"
     echo ""
 }
@@ -286,6 +286,6 @@ echo -e "  ${CYAN}4.${NC} Setup SSH for GitHub (if needed)"
 echo ""
 
 echo -e "${PURPLE}╔════════════════════════════════════════════════════════╗${NC}"
-echo -e "${PURPLE}║${NC}        ${GREEN}💪 Your WSL dev environment is ready!${NC}        ${PURPLE}║${NC}"
+echo -e "${PURPLE}║${NC}${GREEN}Your WSL dev environment is ready!${NC}${PURPLE}║${NC}"
 echo -e "${PURPLE}╚════════════════════════════════════════════════════════╝${NC}"
 echo ""
