@@ -84,7 +84,7 @@ echo ""
 #-------------------------------------------------------------------------------
 # Step 1: Update system
 #-------------------------------------------------------------------------------
-print_step "Step 1/5: Updating system packages"
+print_step "Step 1/6: Updating system packages"
 sudo apt update -qq
 sudo apt upgrade -y -qq
 print_success "System updated"
@@ -93,7 +93,7 @@ echo ""
 #-------------------------------------------------------------------------------
 # Step 2: Install base dependencies
 #-------------------------------------------------------------------------------
-print_step "Step 2/5: Installing base dependencies"
+print_step "Step 2/6: Installing base dependencies"
 sudo apt install --no-install-recommends -y -qq \
     ca-certificates curl wget git openssh-client gnupg \
     build-essential
@@ -103,7 +103,7 @@ echo ""
 #-------------------------------------------------------------------------------
 # Step 3: Install development tools
 #-------------------------------------------------------------------------------
-print_step "Step 3/5: Installing development tools"
+print_step "Step 3/6: Installing development tools"
 sudo apt install --no-install-recommends -y -qq \
     zsh neovim kitty \
     fzf ripgrep bat eza \
@@ -116,7 +116,7 @@ echo ""
 #-------------------------------------------------------------------------------
 # Step 4: Setup Zsh + Oh-My-Zsh + Powerlevel10k
 #-------------------------------------------------------------------------------
-print_step "Step 4/5: Configuring Zsh + Powerlevel10k"
+print_step "Step 4/6: Configuring Zsh + Powerlevel10k"
 
 # Set zsh as default shell
 if [ "$SHELL" != "$(which zsh)" ]; then
@@ -186,6 +186,8 @@ echo ""
 #-------------------------------------------------------------------------------
 # Step 5: Adding Aliases
 #-------------------------------------------------------------------------------
+print_step "Step 5/6: Adding Aliases"
+
 echo "🔧 Добавляю алиасы..."
 
 # Определяем какой shell используется
