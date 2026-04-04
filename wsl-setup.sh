@@ -184,9 +184,58 @@ fi
 echo ""
 
 #-------------------------------------------------------------------------------
-# Step 5: Configure Neovim and Git
+# Step 5: Adding Aliases
 #-------------------------------------------------------------------------------
-print_step "Step 5/5: Configuring Neovim and Git"
+echo "🔧 Добавляю алиасы..."
+
+# Определяем какой shell используется
+if [ -f ~/.zshrc ]; then
+    RC_FILE=~/.zshrc
+    SHELL_NAME="Zsh"
+else
+    RC_FILE=~/.bashrc
+    SHELL_NAME="Bash"
+fi
+
+echo "📝 Найден: $SHELL_NAME ($RC_FILE)"
+
+# Добавляем алиасы (если ещё не добавлены)
+cat >> "$RC_FILE" << 'EOF'
+
+# === WSL Aliases (Auto-added by setup script) ===
+alias ll='ls -la'
+alias cls='clear'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias update='sudo apt update && sudo apt upgrade -y'
+alias install='sudo apt install -y'
+alias remove='sudo apt remove -y'
+alias search='apt search'
+alias myip='curl -s ifconfig.me'
+alias ports='netstat -tulpn 2>/dev/null || ss -tulpn'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
+alias gl='git log --oneline'
+alias mkd='mkdir -p'
+alias rmf='rm -rf'
+alias cpy='cp -r'
+alias mvf='mv'
+alias findf='find . -name'
+alias grep='grep --color=auto'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# === Конец алиасов ===
+EOF
+
+echo "✅ Алиасы добавлены в $RC_FILE"
+#-------------------------------------------------------------------------------
+# Step 6: Configure Neovim and Git
+#-------------------------------------------------------------------------------
+print_step "Step 6/6: Configuring Neovim and Git"
 
 # Create Neovim config directory
 mkdir -p ~/.config/nvim
